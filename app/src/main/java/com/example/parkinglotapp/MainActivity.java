@@ -15,6 +15,7 @@ public class MainActivity extends AppCompatActivity {
         /*my turn to comment*/
         /*jake 2*/
         /*Alex's COmment*/
+        /*Messing things up for Jake's merge conflict*/
     }
 }
 
