@@ -1,3 +1,12 @@
 <resources>
     <string name="app_name">ParkingLotApp</string>
+    <string name="button_send">View Parking Lot</string>
+    <string name="activity2_name">Second Activity (Parking Lot Page)</string>
+    <string name="activity3_name">Parking Spot Page(Third Activity)</string>
+    <string name="model_input">Model</string>
+    <string name="color_input">Color</string>
+    <string name="vin_input">VIN</string>
+    <string name="a1button_send">A1</string>
+    <string name="a2butten_send">A2</string>
+    <string name="carInfoButton_send">Add Info</string>
 </resources>
