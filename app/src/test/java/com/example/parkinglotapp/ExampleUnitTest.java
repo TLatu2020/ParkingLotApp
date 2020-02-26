@@ -12,6 +12,18 @@ import static org.junit.Assert.*;
 public class ExampleUnitTest {
     @Test
     public void addition_isCorrect() {
-        assertEquals(4, 2 + 2);
+        assertEquals("numbers only", 1234, 1234);
+    }
+
+    public void vin_isValid() {
+
+    }
+
+    public void color_isOfficialColor() {
+
+    }
+
+    public void model_isValid() {
+
     }
 }
