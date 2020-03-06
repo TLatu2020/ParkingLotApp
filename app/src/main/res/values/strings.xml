@@ -9,4 +9,10 @@
     <string name="a1button_send">A1</string>
     <string name="a2butten_send">A2</string>
     <string name="carInfoButton_send">Add Info</string>
+    <string name="activity4_name">A2 Parking Spot</string>
+    <string name="a2_TextView_Title">A2</string>
+    <string name="a2_model_editText">Model</string>
+    <string name="a2_color_editText">Color</string>
+    <string name="a2_vin_editText">VIN</string>
+    <string name="a2_btn_save_data">ADD INFO</string>
 </resources>

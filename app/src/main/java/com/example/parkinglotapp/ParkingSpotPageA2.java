@@ -17,14 +17,14 @@ import com.google.firebase.firestore.FirebaseFirestore;
 import java.util.HashMap;
 import java.util.Map;
 
-public class ParkingSpotPage extends AppCompatActivity {
+public class ParkingSpotPageA2 extends AppCompatActivity {
 
     //This constant uses the name of the class itself as the tag
     private static final String LOG_TAG =
             ParkingSpotPage.class.getSimpleName();
-    public static final String TAG = "A1 ParkingSpotData";
+    public static final String TAG = "A2 ParkingSpotData";
 
-    private DocumentReference mDocRef = FirebaseFirestore.getInstance().collection("parkingLot").document("parkingSpaceA1");
+    private DocumentReference mDocRef = FirebaseFirestore.getInstance().collection("parkingLot").document("parkingSpaceA2");
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -73,4 +73,3 @@ public class ParkingSpotPage extends AppCompatActivity {
 
     }
 }
-

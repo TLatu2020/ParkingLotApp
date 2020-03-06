@@ -20,12 +20,21 @@ public class ParkingLotPage extends AppCompatActivity {
     }
 
     //Called when the user taps the View Parking Lot button
-    public void viewParkingSpot(View view){
+    public void viewParkingSpotA1(View view){
 
         //Testing button
-        Log.d(LOG_TAG, "parking spot button pushed!");
+        Log.d(LOG_TAG, "parking spot A1 button pushed!");
 
         Intent intent = new Intent (ParkingLotPage.this, ParkingSpotPage.class);
+        startActivity(intent);
+    }
+
+    public void viewParkingSpotA2(View view){
+
+        //Testing button
+        Log.d(LOG_TAG, "parking spot A2 button pushed!");
+
+        Intent intent = new Intent (ParkingLotPage.this, ParkingSpotPageA2.class);
         startActivity(intent);
     }
 }
