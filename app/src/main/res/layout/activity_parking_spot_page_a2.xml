@@ -51,7 +51,6 @@
         android:ems="10"
         android:hint="@string/a2_model_editText"
         android:inputType="textPersonName"
-        android:text="@string/model_input"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView12" />
@@ -68,7 +67,6 @@
         android:ems="10"
         android:hint="@string/a2_color_editText"
         android:inputType="textPersonName"
-        android:text="@string/color_input"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editText2" />
@@ -85,7 +83,6 @@
         android:ems="10"
         android:hint="@string/a2_vin_editText"
         android:inputType="textPersonName"
-        android:text="@string/vin_input"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
