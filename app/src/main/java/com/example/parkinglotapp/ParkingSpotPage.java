@@ -12,6 +12,7 @@ import android.widget.EditText;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 
 import java.util.HashMap;
@@ -26,12 +27,37 @@ public class ParkingSpotPage extends AppCompatActivity {
 
     private DocumentReference mDocRef = FirebaseFirestore.getInstance().collection("parkingLot").document("parkingSpaceA1");
 
+    EditText model;
+    EditText color;
+    EditText vin;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_parking_spot_page);
-
         Intent intent = getIntent();
+
+        model=(EditText)findViewById(R.id.editText2);
+        color=(EditText)findViewById(R.id.editText3);
+        vin=(EditText)findViewById(R.id.editText4);
+
+        mDocRef.get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
+            @Override
+            public void onSuccess(DocumentSnapshot documentSnapshot) {
+                if(documentSnapshot.exists()){
+                    String dbModel = documentSnapshot.getString("model");
+                    String dbColor = documentSnapshot.getString("color");
+                    String dbVin = documentSnapshot.getString("vin");
+                    Boolean dbOccupied = documentSnapshot.getBoolean("occupied");
+                    if(dbOccupied==true){
+                        model.setText(dbModel);
+                        color.setText(dbColor);
+                        vin.setText(dbVin);
+                        System.out.println("********"+dbModel+ " "+dbColor+" "+dbVin+"*************");
+                    }
+                }
+            }
+        });
     }
 
     //Called when the user taps the View Parking Lot button
@@ -59,6 +85,7 @@ public class ParkingSpotPage extends AppCompatActivity {
         dataToSave.put("model", modelString);
         dataToSave.put("color", colorString);
         dataToSave.put("vin", vinString);
+        dataToSave.put("occupied", true);
         mDocRef.set(dataToSave).addOnSuccessListener(new OnSuccessListener<Void>() {
             @Override
             public void onSuccess(Void aVoid) {
