@@ -1,5 +1,6 @@
 package com.example.parkinglotapp;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -12,6 +13,7 @@ import android.widget.EditText;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
@@ -52,6 +54,7 @@ public class ParkingLotPage extends AppCompatActivity {
         btnA1 = findViewById(R.id.button2);
         btnA2 = findViewById(R.id.button3);
 
+
         dbPageA1.get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
             @Override
             public void onSuccess(DocumentSnapshot documentSnapshot) {
@@ -70,7 +73,6 @@ public class ParkingLotPage extends AppCompatActivity {
                 }
             }
         });
-
         dbPageA2.get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
             @Override
             public void onSuccess(DocumentSnapshot documentSnapshot) {
@@ -89,24 +91,17 @@ public class ParkingLotPage extends AppCompatActivity {
                 }
             }
         });
-
     }
-
     //Called when the user taps the View Parking Lot button
     public void viewParkingSpotA1(View view){
-
         //Testing button
         Log.d(LOG_TAG, "parking spot A1 button pushed!");
-
         Intent intent = new Intent (ParkingLotPage.this, ParkingSpotPage.class);
         startActivity(intent);
     }
-
     public void viewParkingSpotA2(View view){
-
         //Testing button
         Log.d(LOG_TAG, "parking spot A2 button pushed!");
-
         Intent intent = new Intent (ParkingLotPage.this, ParkingSpotPageA2.class);
         startActivity(intent);
     }

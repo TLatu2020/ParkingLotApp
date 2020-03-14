@@ -86,7 +86,7 @@ public class ParkingSpotPage extends AppCompatActivity {
         String colorString = color.getText().toString();
         String vinString = vin.getText().toString();
 
-        System.out.println("Testing Writting Data to Firebase: " + "\""+modelString+"\"" + " -" + colorString + " - " + vinString);
+        Log.i("TEST","Testing Writting Data to Firebase: " + "\""+modelString+"\"" + " -" + colorString + " - " + vinString);
         if(modelString.isEmpty()||colorString.isEmpty()){return;}
 
         Map<String, Object> dataToSave = new HashMap<String, Object>();
@@ -106,6 +106,30 @@ public class ParkingSpotPage extends AppCompatActivity {
             }
         });
 
+    }
+
+    public void removeCar(View view){
+        Log.i("INFO", "Remove A2 car button pushed");
+
+        Map<String, Object> dataToSave = new HashMap<String, Object>();
+        dataToSave.put("model", " ");
+        dataToSave.put("color", " ");
+        dataToSave.put("vin", " ");
+        dataToSave.put("occupied", false);
+        mDocRef.set(dataToSave).addOnSuccessListener(new OnSuccessListener<Void>() {
+            @Override
+            public void onSuccess(Void aVoid) {
+                Log.d(TAG, "Document has been saved!");
+            }
+        }).addOnFailureListener(new OnFailureListener() {
+            @Override
+            public void onFailure(@NonNull Exception e) {
+                Log.w(TAG, "Document was not saved", e);
+            }
+        });
+        model.setText(" ");
+        color.setText(" ");
+        vin.setText(" ");
     }
 }
 

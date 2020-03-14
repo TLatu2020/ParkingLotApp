@@ -25,4 +25,6 @@
     <string name="textViewA2_vin">VIN</string>
     <string name="textViewA2_color">Color</string>
     <string name="textViewA2_model">Model</string>
+    <string name="A1_remove_car_btn">Remove Car</string>
+    <string name="A2_remove_car_btn">Remove Car</string>
 </resources>

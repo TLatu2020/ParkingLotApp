@@ -57,6 +57,7 @@ public class ParkingSpotPageA2 extends AppCompatActivity {
                         model.setText(dbModel);
                         color.setText(dbColor);
                         vin.setText(dbVin);
+                        Log.i("TEST","********"+dbModel+ " "+dbColor+" "+dbVin+"*************");
                         //btnA2.setBackgroundColor(Color.RED);
                         System.out.println("********"+dbModel+ " "+dbColor+" "+dbVin+"*************");
                     }
@@ -103,5 +104,29 @@ public class ParkingSpotPageA2 extends AppCompatActivity {
             }
         });
 
+    }
+
+    public void removeCar(View view){
+    Log.i("INFO", "Remove A2 car button pushed");
+
+        Map<String, Object> dataToSave = new HashMap<String, Object>();
+        dataToSave.put("model", " ");
+        dataToSave.put("color", " ");
+        dataToSave.put("vin", " ");
+        dataToSave.put("occupied", false);
+        mDocRef.set(dataToSave).addOnSuccessListener(new OnSuccessListener<Void>() {
+            @Override
+            public void onSuccess(Void aVoid) {
+                Log.d(TAG, "Document has been saved!");
+            }
+        }).addOnFailureListener(new OnFailureListener() {
+            @Override
+            public void onFailure(@NonNull Exception e) {
+                Log.w(TAG, "Document was not saved", e);
+            }
+        });
+        model.setText(" ");
+        color.setText(" ");
+        vin.setText(" ");
     }
 }
