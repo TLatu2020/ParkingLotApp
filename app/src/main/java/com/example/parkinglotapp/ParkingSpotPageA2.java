@@ -4,9 +4,11 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 
 import com.google.android.gms.tasks.OnFailureListener;
@@ -30,6 +32,7 @@ public class ParkingSpotPageA2 extends AppCompatActivity {
     EditText model;
     EditText color;
     EditText vin;
+    //Button btnA2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,6 +43,7 @@ public class ParkingSpotPageA2 extends AppCompatActivity {
         model=(EditText)findViewById(R.id.editText2);
         color=(EditText)findViewById(R.id.editText3);
         vin=(EditText)findViewById(R.id.editText4);
+        //btnA2 = findViewById(R.id.button2);
 
         mDocRef.get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
             @Override
@@ -53,6 +57,7 @@ public class ParkingSpotPageA2 extends AppCompatActivity {
                         model.setText(dbModel);
                         color.setText(dbColor);
                         vin.setText(dbVin);
+                        //btnA2.setBackgroundColor(Color.RED);
                         System.out.println("********"+dbModel+ " "+dbColor+" "+dbVin+"*************");
                     }
                 }

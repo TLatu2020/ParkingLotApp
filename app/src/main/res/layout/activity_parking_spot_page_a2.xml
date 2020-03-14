@@ -13,7 +13,7 @@
         android:layout_marginStart="8dp"
         android:layout_marginLeft="8dp"
         android:layout_marginBottom="8dp"
-        android:text="Model"
+        android:text="@string/textViewA2_model"
         app:layout_constraintBottom_toTopOf="@+id/editText2"
         app:layout_constraintStart_toStartOf="@+id/editText2" />
 
@@ -24,7 +24,7 @@
         android:layout_marginStart="8dp"
         android:layout_marginLeft="8dp"
         android:layout_marginBottom="8dp"
-        android:text="Color"
+        android:text="@string/textViewA2_color"
         app:layout_constraintBottom_toTopOf="@+id/editText3"
         app:layout_constraintStart_toStartOf="@+id/editText3" />
 
@@ -35,7 +35,7 @@
         android:layout_marginStart="8dp"
         android:layout_marginLeft="8dp"
         android:layout_marginBottom="8dp"
-        android:text="VIN"
+        android:text="@string/textViewA2_vin"
         app:layout_constraintBottom_toTopOf="@+id/editText4"
         app:layout_constraintStart_toStartOf="@+id/editText4" />
 
@@ -51,7 +51,6 @@
         android:ems="10"
         android:hint="@string/a2_model_editText"
         android:inputType="textPersonName"
-        android:text="@string/model_input"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView12" />
@@ -68,7 +67,6 @@
         android:ems="10"
         android:hint="@string/a2_color_editText"
         android:inputType="textPersonName"
-        android:text="@string/color_input"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editText2" />
@@ -85,7 +83,6 @@
         android:ems="10"
         android:hint="@string/a2_vin_editText"
         android:inputType="textPersonName"
-        android:text="@string/vin_input"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
@@ -100,7 +97,6 @@
         android:layout_marginTop="32dp"
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
-        android:hint="@string/a2butten_send"
         android:onClick="saveParkingSpotData"
         android:text="@string/carInfoButton_send"
         app:layout_constraintEnd_toEndOf="parent"
@@ -116,11 +112,12 @@
         android:layout_marginTop="24dp"
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
-        android:hint="@string/a2_TextView_Title"
-        android:text="TextView"
+        android:text="@string/a2"
+        android:textAlignment="center"
         android:textSize="30sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.51"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        android:gravity="center_horizontal" />
 </androidx.constraintlayout.widget.ConstraintLayout>
