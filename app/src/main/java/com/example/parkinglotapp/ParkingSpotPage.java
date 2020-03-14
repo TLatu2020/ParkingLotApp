@@ -4,10 +4,16 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.util.Log;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
+import android.widget.NumberPicker;
+import android.widget.TextView;
 
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
@@ -15,6 +21,7 @@ import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 
+import java.lang.reflect.Array;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -40,6 +47,7 @@ public class ParkingSpotPage extends AppCompatActivity {
         model=(EditText)findViewById(R.id.editText2);
         color=(EditText)findViewById(R.id.editText3);
         vin=(EditText)findViewById(R.id.editText4);
+
 
         mDocRef.get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
             @Override
@@ -78,7 +86,7 @@ public class ParkingSpotPage extends AppCompatActivity {
         String colorString = color.getText().toString();
         String vinString = vin.getText().toString();
 
-        System.out.println("Testing Writting Data to Firebase: " + "\""+modelString+"\"" + " -" + colorString + " - " + vinString);
+        Log.i("TEST","Testing Writting Data to Firebase: " + "\""+modelString+"\"" + " -" + colorString + " - " + vinString);
         if(modelString.isEmpty()||colorString.isEmpty()){return;}
 
         Map<String, Object> dataToSave = new HashMap<String, Object>();
@@ -98,6 +106,30 @@ public class ParkingSpotPage extends AppCompatActivity {
             }
         });
 
+    }
+
+    public void removeCar(View view){
+        Log.i("INFO", "Remove A2 car button pushed");
+
+        Map<String, Object> dataToSave = new HashMap<String, Object>();
+        dataToSave.put("model", " ");
+        dataToSave.put("color", " ");
+        dataToSave.put("vin", " ");
+        dataToSave.put("occupied", false);
+        mDocRef.set(dataToSave).addOnSuccessListener(new OnSuccessListener<Void>() {
+            @Override
+            public void onSuccess(Void aVoid) {
+                Log.d(TAG, "Document has been saved!");
+            }
+        }).addOnFailureListener(new OnFailureListener() {
+            @Override
+            public void onFailure(@NonNull Exception e) {
+                Log.w(TAG, "Document was not saved", e);
+            }
+        });
+        model.setText(" ");
+        color.setText(" ");
+        vin.setText(" ");
     }
 }
 

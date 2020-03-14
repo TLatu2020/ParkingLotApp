@@ -1,15 +1,19 @@
 package com.example.parkinglotapp;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
@@ -31,6 +35,9 @@ public class ParkingLotPage extends AppCompatActivity {
     TextView A2color;
     TextView A2vin;
 
+    Button btnA1;
+    Button btnA2;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -44,6 +51,10 @@ public class ParkingLotPage extends AppCompatActivity {
         A2color=(TextView)findViewById(R.id.textView8);
         A2vin=(TextView)findViewById(R.id.textView7);
 
+        btnA1 = findViewById(R.id.button2);
+        btnA2 = findViewById(R.id.button3);
+
+
         dbPageA1.get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
             @Override
             public void onSuccess(DocumentSnapshot documentSnapshot) {
@@ -56,12 +67,12 @@ public class ParkingLotPage extends AppCompatActivity {
                         A1model.setText(A1dbModel);
                         A1color.setText(A1dbColor);
                         A1vin.setText(A1dbVin);
+                        btnA1.setBackgroundColor(Color.RED);
                         System.out.println("********"+A1dbModel+ " "+A1dbColor+" "+A1dbVin+"*************");
                     }
                 }
             }
         });
-
         dbPageA2.get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
             @Override
             public void onSuccess(DocumentSnapshot documentSnapshot) {
@@ -74,29 +85,23 @@ public class ParkingLotPage extends AppCompatActivity {
                         A2model.setText(A2dbModel);
                         A2color.setText(A2dbColor);
                         A2vin.setText(A2dbVin);
+                        btnA2.setBackgroundColor(Color.RED);
                         System.out.println("********"+A2dbModel+ " "+A2dbColor+" "+A2dbVin+"*************");
                     }
                 }
             }
         });
-
     }
-
     //Called when the user taps the View Parking Lot button
     public void viewParkingSpotA1(View view){
-
         //Testing button
         Log.d(LOG_TAG, "parking spot A1 button pushed!");
-
         Intent intent = new Intent (ParkingLotPage.this, ParkingSpotPage.class);
         startActivity(intent);
     }
-
     public void viewParkingSpotA2(View view){
-
         //Testing button
         Log.d(LOG_TAG, "parking spot A2 button pushed!");
-
         Intent intent = new Intent (ParkingLotPage.this, ParkingSpotPageA2.class);
         startActivity(intent);
     }

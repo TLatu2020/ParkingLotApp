@@ -4,9 +4,11 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 
 import com.google.android.gms.tasks.OnFailureListener;
@@ -30,6 +32,7 @@ public class ParkingSpotPageA2 extends AppCompatActivity {
     EditText model;
     EditText color;
     EditText vin;
+    //Button btnA2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,6 +43,7 @@ public class ParkingSpotPageA2 extends AppCompatActivity {
         model=(EditText)findViewById(R.id.editText2);
         color=(EditText)findViewById(R.id.editText3);
         vin=(EditText)findViewById(R.id.editText4);
+        //btnA2 = findViewById(R.id.button2);
 
         mDocRef.get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
             @Override
@@ -53,6 +57,8 @@ public class ParkingSpotPageA2 extends AppCompatActivity {
                         model.setText(dbModel);
                         color.setText(dbColor);
                         vin.setText(dbVin);
+                        Log.i("TEST","********"+dbModel+ " "+dbColor+" "+dbVin+"*************");
+                        //btnA2.setBackgroundColor(Color.RED);
                         System.out.println("********"+dbModel+ " "+dbColor+" "+dbVin+"*************");
                     }
                 }
@@ -98,5 +104,29 @@ public class ParkingSpotPageA2 extends AppCompatActivity {
             }
         });
 
+    }
+
+    public void removeCar(View view){
+    Log.i("INFO", "Remove A2 car button pushed");
+
+        Map<String, Object> dataToSave = new HashMap<String, Object>();
+        dataToSave.put("model", " ");
+        dataToSave.put("color", " ");
+        dataToSave.put("vin", " ");
+        dataToSave.put("occupied", false);
+        mDocRef.set(dataToSave).addOnSuccessListener(new OnSuccessListener<Void>() {
+            @Override
+            public void onSuccess(Void aVoid) {
+                Log.d(TAG, "Document has been saved!");
+            }
+        }).addOnFailureListener(new OnFailureListener() {
+            @Override
+            public void onFailure(@NonNull Exception e) {
+                Log.w(TAG, "Document was not saved", e);
+            }
+        });
+        model.setText(" ");
+        color.setText(" ");
+        vin.setText(" ");
     }
 }
