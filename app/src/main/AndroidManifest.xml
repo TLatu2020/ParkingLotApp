@@ -5,13 +5,13 @@
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
-        android:label="@string/app_name"
+        android:label="Parking Lot"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
         android:name=".ParkingSpotPage"
-        android:label="@string/activity3_name"
+        android:label="Spot A1"
         android:parentActivityName=".ParkingLotPage">
         <meta-data
         android:name="android.support.PARENT_ACTIVITY"
@@ -19,11 +19,155 @@
         </activity>
         <activity
         android:name=".ParkingSpotPageA2"
-        android:label="@string/activity4_name"
+        android:label="Spot A2"
         android:parentActivityName=".ParkingLotPage">
         <meta-data
         android:name="android.support.PARENT_ACTIVITY"
         android:value="com.example.parkinglotapp.ParkingLotPage" />
+        </activity>
+        <activity
+        android:name=".ParkingSpotPageA3"
+        android:label="Spot A3"
+        android:parentActivityName=".ParkingLotPage">
+        <meta-data
+            android:name="android.support.PARENT_ACTIVITY"
+            android:value="com.example.parkinglotapp.ParkingLotPage" />
+        </activity>
+        <activity
+            android:name=".ParkingSpotPageA4"
+            android:label="Spot A4"
+            android:parentActivityName=".ParkingLotPage">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.parkinglotapp.ParkingLotPage" />
+        </activity>
+        <activity
+            android:name=".ParkingSpotPageA5"
+            android:label="Spot A5"
+            android:parentActivityName=".ParkingLotPage">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.parkinglotapp.ParkingLotPage" />
+        </activity>
+        <activity
+            android:name=".ParkingSpotPageA6"
+            android:label="Spot A6"
+            android:parentActivityName=".ParkingLotPage">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.parkinglotapp.ParkingLotPage" />
+        </activity>
+        <activity
+            android:name=".ParkingSpotPageA7"
+            android:label="Spot A7"
+            android:parentActivityName=".ParkingLotPage">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.parkinglotapp.ParkingLotPage" />
+        </activity>
+        <activity
+            android:name=".ParkingSpotPageA8"
+            android:label="Spot A8"
+            android:parentActivityName=".ParkingLotPage">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.parkinglotapp.ParkingLotPage" />
+        </activity>
+        <activity
+            android:name=".ParkingSpotPageA9"
+            android:label="Spot A9"
+            android:parentActivityName=".ParkingLotPage">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.parkinglotapp.ParkingLotPage" />
+        </activity>
+        <activity
+            android:name=".ParkingSpotPageA10"
+            android:label="Spot A10"
+            android:parentActivityName=".ParkingLotPage">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.parkinglotapp.ParkingLotPage" />
+        </activity>
+        <activity
+            android:name=".ParkingSpotPageA11"
+            android:label="Spot A11"
+            android:parentActivityName=".ParkingLotPage">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.parkinglotapp.ParkingLotPage" />
+        </activity>
+        <activity
+            android:name=".ParkingSpotPageA12"
+            android:label="Spot A12"
+            android:parentActivityName=".ParkingLotPage">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.parkinglotapp.ParkingLotPage" />
+        </activity>
+        <activity
+            android:name=".ParkingSpotPageA13"
+            android:label="Spot A13"
+            android:parentActivityName=".ParkingLotPage">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.parkinglotapp.ParkingLotPage" />
+        </activity>
+        <activity
+            android:name=".ParkingSpotPageA14"
+            android:label="Spot A14"
+            android:parentActivityName=".ParkingLotPage">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.parkinglotapp.ParkingLotPage" />
+        </activity>
+        <activity
+            android:name=".ParkingSpotPageA15"
+            android:label="Spot A15"
+            android:parentActivityName=".ParkingLotPage">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.parkinglotapp.ParkingLotPage" />
+        </activity>
+        <activity
+        android:name=".ParkingSpotPageA16"
+        android:label="Spot A16"
+        android:parentActivityName=".ParkingLotPage">
+        <meta-data
+            android:name="android.support.PARENT_ACTIVITY"
+            android:value="com.example.parkinglotapp.ParkingLotPage" />
+    </activity>
+        <activity
+            android:name=".ParkingSpotPageA17"
+            android:label="Spot A17"
+            android:parentActivityName=".ParkingLotPage">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.parkinglotapp.ParkingLotPage" />
+        </activity>
+        <activity
+            android:name=".ParkingSpotPageA18"
+            android:label="Spot A18"
+            android:parentActivityName=".ParkingLotPage">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.parkinglotapp.ParkingLotPage" />
+        </activity>
+        <activity
+            android:name=".ParkingSpotPageA19"
+            android:label="Spot A19"
+            android:parentActivityName=".ParkingLotPage">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.parkinglotapp.ParkingLotPage" />
+        </activity>
+        <activity
+            android:name=".ParkingSpotPageA20"
+            android:label="Spot A20"
+            android:parentActivityName=".ParkingLotPage">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.parkinglotapp.ParkingLotPage" />
         </activity>
         <activity
         android:name=".ParkingLotPage"

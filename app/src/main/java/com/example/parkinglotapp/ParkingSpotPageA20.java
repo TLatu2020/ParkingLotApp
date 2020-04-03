@@ -20,14 +20,14 @@ import com.google.firebase.firestore.FirebaseFirestore;
 import java.util.HashMap;
 import java.util.Map;
 
-public class ParkingSpotPageA2 extends AppCompatActivity {
+public class ParkingSpotPageA20 extends AppCompatActivity {
 
     //This constant uses the name of the class itself as the tag
     private static final String LOG_TAG =
             ParkingSpotPage.class.getSimpleName();
-    public static final String TAG = "A2 ParkingSpotData";
+    public static final String TAG = "A4 ParkingSpotData";
 
-    private DocumentReference mDocRef = FirebaseFirestore.getInstance().collection("parkingLot").document("parkingSpaceA2");
+    private DocumentReference mDocRef = FirebaseFirestore.getInstance().collection("parkingLot").document("parkingSpaceA20");
 
     EditText model;
     EditText color;
@@ -57,7 +57,7 @@ public class ParkingSpotPageA2 extends AppCompatActivity {
                         color.setText(dbColor);
                         vin.setText(dbVin);
                         Log.i("TEST","********"+dbModel+ " "+dbColor+" "+dbVin+"*************");
-                        //btnA2.setBackgroundColor(Color.RED);
+                        //btnA20.setBackgroundColor(Color.RED);
                         System.out.println("********"+dbModel+ " "+dbColor+" "+dbVin+"*************");
                     }
                 }
@@ -106,7 +106,7 @@ public class ParkingSpotPageA2 extends AppCompatActivity {
     }
 
     public void removeCar(View view){
-    Log.i("INFO", "Remove A2 car button pushed");
+        Log.i("INFO", "Remove A20 car button pushed");
 
         Map<String, Object> dataToSave = new HashMap<String, Object>();
         dataToSave.put("model", " ");
